@@ -1,6 +1,6 @@
 language: node_js
 node_js:  0.10
-
+arch: ppc64le
 before_script:
   - node tests/server.js &
   - sleep 1
