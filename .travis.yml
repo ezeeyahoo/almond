@@ -1,7 +1,14 @@
+arch:
+  - amd64
+  - ppc64le
+  
 language: node_js
 node_js:  0.10
 
 before_script:
+  - |
+      if [ "$TRAVIS_CPU_ARCH" == "ppc64le" ]; then
+        ./configure --prefix=/home/travis/.nvm/v0.10.48 -m64
   - node tests/server.js &
   - sleep 1
 
